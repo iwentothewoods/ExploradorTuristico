@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Luna Lopardo</string>
+    <string name="nav_header_subtitle">luna.lopardo@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="app_name">Explorador Turistico</string>
+    <string name="lugares_tur_sticos">Lugares Turísticos</string>
+    <string name="mapas">Mapas</string>
+    <string name="config">Configuración</string>
+    <string name="seleccionar_tipo_mapa">Seleccionar tipo de mapa</string>
+    <string name="seleccionar_idioma">Seleccionar idioma</string>
+    <string name="salir">Salir</string>
+    <string name="language_label">Idiomas:</string>
+    <string name="apply_button">Aplicar</string>
+    <string name="app_lang">Idioma de la app:</string>
+    <string name="tipo_de_mapa">Tipo de Mapa:</string>
+    <string name="app_config_title">Configuración de la App</string>
+    <string name="ver_m_s">Ver Más</string>
+    <string name="volver">Volver</string>
+    <string name="map_change">"Tipo de mapa cambiado a "</string>
+    <string name="select_language">Selecionar Idioma</string>
+    <string name="english">English</string>
+    <string name="spanish">Español</string>
+
+</resources>

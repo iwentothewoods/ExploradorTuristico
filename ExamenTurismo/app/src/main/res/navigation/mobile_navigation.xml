@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_lugares">
+
+    <fragment
+        android:id="@+id/nav_lugares"
+        android:name="com.lunasoft.examenturismo.ui.lugares_turisticos.LugaresFragment"
+        android:label="@string/lugares_tur_sticos"
+        tools:layout="@layout/fragment_lugares" />
+
+    <fragment
+        android:id="@+id/nav_mapas"
+        android:name="com.lunasoft.examenturismo.ui.mapas.MapsFragment"
+        android:label="@string/mapas"
+        tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/nav_configuracion"
+        android:name="com.lunasoft.examenturismo.ui.configuracion.ConfiguracionFragment"
+        android:label="@string/config"
+        tools:layout="@layout/fragment_configuracion" />
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.lunasoft.examenturismo.ui.salir.SalirFragment"
+        android:label="@string/salir"
+        tools:layout="@layout/fragment_salir" />
+</navigation>
