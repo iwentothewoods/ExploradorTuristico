@@ -1,11 +1,7 @@
 package com.lunasoft.examenturismo.ui.lugares_turisticos;
 
-import static androidx.core.content.ContentProviderCompat.requireContext;
-
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lunasoft.examenturismo.LugarTuristico;
 import com.lunasoft.examenturismo.R;
-import com.lunasoft.examenturismo.ui.mapas.MapsFragment;
+import androidx.navigation.Navigation;
 
 import java.util.List;
 
@@ -59,10 +53,9 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolderPe
         holder.boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, LugarElegido.class);
-                intent.putExtra("lugar", lugar);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("lugar", lugar);
+                Navigation.findNavController(v).navigate(R.id.lugarSeleccionado, bundle);
             }
         });
     }
@@ -85,6 +78,4 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolderPe
             foto = itemView.findViewById(R.id.ivFoto);
         }
     }
-
-
 }

@@ -63,9 +63,9 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState);
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-        }
+
+        mapFragment.getMapAsync(this);
+
     }
 
     @Override
@@ -73,7 +73,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         googleMap = map;
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-        // Necesitamos el vm de config para manejar los tipos de mapa y marcadores
+        // Necesitamos el vm de config para manejar los tipos de mapa
         ConfiguracionViewModel configuracionViewModel = new ViewModelProvider(requireActivity()).get(ConfiguracionViewModel.class);
 
         viewModel.getListaLugares().observe(getViewLifecycleOwner(), new Observer<List<LugarTuristico>>() {
@@ -87,10 +87,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         configuracionViewModel.getTipoMapa().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String tipoMapa) {
-                Log.d("MapsFragment", "Tipo de mapa cambiado a: " + tipoMapa);
-                if (googleMap != null) {
-                    googleMap.setMapType(configuracionViewModel.obtenerTipoMapa());
-                }
+                googleMap.setMapType(configuracionViewModel.obtenerTipoMapa());
             }
         });
 

@@ -27,4 +27,10 @@
         android:name="com.lunasoft.examenturismo.ui.salir.SalirFragment"
         android:label="@string/salir"
         tools:layout="@layout/fragment_salir" />
+
+    <fragment
+        android:id="@+id/lugarSeleccionado"
+        android:name="com.lunasoft.examenturismo.ui.lugares_turisticos.LugarSeleccionado"
+        android:label="@string/lugar_seleccionado"
+        tools:layout="@layout/fragment_lugar_seleccionado" />
 </navigation>

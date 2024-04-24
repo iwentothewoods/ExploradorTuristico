@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +29,8 @@ public class LugaresFragment extends Fragment {
     private FragmentLugaresBinding binding;
     private LugarAdapter adapter;
 
+    private LugarSeleccionadoViewModel mViewModel;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         LugaresViewModel viewModel =
@@ -38,12 +41,7 @@ public class LugaresFragment extends Fragment {
 
         RecyclerView recyclerView = binding.listaLugares;
 
-        Context context = getContext();
-        if (context != null) {
-            recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        } else {
-            Log.d("salida","no llega el context");
-        }
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         adapter = new LugarAdapter(new ArrayList<>(), getContext(), getLayoutInflater());
         recyclerView.setAdapter(adapter);
@@ -52,6 +50,16 @@ public class LugaresFragment extends Fragment {
             @Override
             public void onChanged(List<LugarTuristico> lugares) {
                 adapter.setLugares(lugares);
+            }
+        });
+
+        mViewModel = new ViewModelProvider(this).get(LugarSeleccionadoViewModel.class);
+        mViewModel.getLugarM().observe(getViewLifecycleOwner(), new Observer<LugarTuristico>() {
+            @Override
+            public void onChanged(LugarTuristico lugar) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("lugar", lugar);
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.lugarSeleccionado, bundle);
             }
         });
 

@@ -25,7 +25,7 @@ public class ConfiguracionViewModel extends ViewModel {
     public void setResources(Resources resources) {
         this.resources = resources;
     }
-    
+
     public void cambiarIdioma(String idiomaElegido) {
         codigoIdiomaSeleccionado = obtenerCodigoIdioma(idiomaElegido);
         establecerIdioma(codigoIdiomaSeleccionado);

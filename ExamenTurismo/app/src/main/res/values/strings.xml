@@ -25,5 +25,6 @@
     <string name="select_language">Selecionar Idioma</string>
     <string name="english">English</string>
     <string name="spanish">Español</string>
+    <string name="lugar_seleccionado">Lugar Seleccionado</string>
 
 </resources>
