@@ -22,7 +22,6 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolderPe
     private List<LugarTuristico> listaDeLugares;
     private Context context;
     private LayoutInflater li;
-
     public LugarAdapter(List<LugarTuristico> listaDeLugares, Context context, LayoutInflater li) {
         this.listaDeLugares = listaDeLugares;
         this.context = context;
@@ -53,11 +52,12 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolderPe
         holder.boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("lugar", lugar);
-                Navigation.findNavController(v).navigate(R.id.lugarSeleccionado, bundle);
+               Bundle bundle = new Bundle();
+               bundle.putSerializable("lugar", lugar);
+               Navigation.findNavController(v).navigate(R.id.lugarSeleccionado, bundle);
             }
         });
+
     }
 
     @Override

@@ -53,16 +53,6 @@ public class LugaresFragment extends Fragment {
             }
         });
 
-        mViewModel = new ViewModelProvider(this).get(LugarSeleccionadoViewModel.class);
-        mViewModel.getLugarM().observe(getViewLifecycleOwner(), new Observer<LugarTuristico>() {
-            @Override
-            public void onChanged(LugarTuristico lugar) {
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("lugar", lugar);
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.lugarSeleccionado, bundle);
-            }
-        });
-
         return root;
     }
 

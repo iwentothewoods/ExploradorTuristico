@@ -35,7 +35,7 @@ public class LugarSeleccionado extends Fragment {
         TextView ubicacion = view.findViewById(R.id.tvUbicacionLugar);
         ImageView foto = view.findViewById(R.id.ivFotoLugar);
         Button boton = view.findViewById(R.id.btVolver);
-
+        
         Bundle bundle = getArguments();
         LugarTuristico lugar = (LugarTuristico) bundle.getSerializable("lugar");
 

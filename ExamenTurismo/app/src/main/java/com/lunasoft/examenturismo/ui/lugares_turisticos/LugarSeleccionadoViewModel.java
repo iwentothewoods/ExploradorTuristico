@@ -14,14 +14,19 @@ public class LugarSeleccionadoViewModel extends AndroidViewModel {
 
 
     private MutableLiveData<LugarTuristico> LugarTuristicoM;
+
     public LugarSeleccionadoViewModel(@NonNull Application application) {
         super(application);
     }
+
     public LiveData<LugarTuristico> getLugarM() {
-        if (LugarTuristicoM == null){
+        if (LugarTuristicoM == null) {
             LugarTuristicoM = new MutableLiveData<>();
         }
         return LugarTuristicoM;
     }
 
+    public void setLugarTuristicoM(MutableLiveData<LugarTuristico> lugarTuristicoM) {
+        LugarTuristicoM = lugarTuristicoM;
+    }
 }
